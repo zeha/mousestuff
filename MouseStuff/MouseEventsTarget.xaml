@@ -1,0 +1,8 @@
+﻿<Window x:Class="MouseStuff.MouseEventsTarget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MouseEventsTarget" Height="300" Width="300" WindowState="Maximized">
+    <Grid>
+        <Canvas Height="261" HorizontalAlignment="Left" Name="canvas1" VerticalAlignment="Top" Width="278" IsManipulationEnabled="True" MouseMove="canvas1_MouseMove" MouseDown="canvas1_MouseDown" />
+    </Grid>
+</Window>

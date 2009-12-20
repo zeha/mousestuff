@@ -1,0 +1,33 @@
+﻿<Window x:Class="MouseStuff.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        mc:Ignorable="d" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        Title="MouseStuff" Loaded="Window_Loaded" Closed="Window_Closed" WindowStyle="SingleBorderWindow" 
+        WindowStartupLocation="CenterScreen" Height="340" Width="483">
+    <Grid Background="#FFC4C4C4">
+        <Label Margin="0,0,16,12" Content="&lt;entries&gt;" Name="labelEntryCount" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="145" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        <TextBox Margin="12,12,16,0" Name="textFilename" IsReadOnly="True" IsUndoEnabled="False" AllowDrop="False" BorderThickness="0" Background="{x:Null}" Height="23" VerticalAlignment="Top" />
+        <Button Content="Simulate" Height="23" HorizontalAlignment="Right" Margin="0,42,97,0" Name="buttonSimulate" VerticalAlignment="Top" Width="75" Click="buttonSimulate_Click" />
+        <Button Content="Run" Height="23" HorizontalAlignment="Right" Margin="0,42,16,0" Name="buttonRun" VerticalAlignment="Top" Width="75" Click="buttonRun_Click" />
+        <Button Content="Open" Height="23" HorizontalAlignment="Right" Margin="0,211,16,0" Name="buttonOpen" VerticalAlignment="Top" Width="75" Click="buttonOpen_Click" />
+        <Button Content="Save" Height="23" HorizontalAlignment="Right" Margin="0,240,16,0" Name="buttonSave" VerticalAlignment="Top" Width="75" Click="buttonSave_Click" />
+        <Button Content="Append" Height="23" HorizontalAlignment="Right" Margin="0,240,97,0" Name="buttonAppend" VerticalAlignment="Top" Width="75" Click="buttonAppend_Click" />
+        <Button Content="New" Height="23" HorizontalAlignment="Right" Margin="0,211,97,0" Name="buttonNew" VerticalAlignment="Top" Width="75" Click="buttonNew_Click" />
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="12,41,178,12" Name="datagridMouseEvents">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="ctxMenu_OffsetByTime" Click="ctxMenu_OffsetByTime_Click" Header="Offset by Time"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="timeslot"  Binding="{Binding timeslot}"/>
+                <DataGridTextColumn Header="posX"  Binding="{Binding posX}"/>
+                <DataGridTextColumn Header="posY"  Binding="{Binding posY}"/>
+                <DataGridTextColumn Header="button1"  Binding="{Binding button1}"/>
+                <DataGridTextColumn Header="button2"  Binding="{Binding button2}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
